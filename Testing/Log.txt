@@ -1,0 +1,141 @@
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: MIKBRUNO connected
+[EVENT]: MIKBRUNO disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: MIKBRUNO connected
+[EVENT]: MIKBRUNO disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: MIKBRUNO connected
+[EVENT]: MIKBRUNO disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: MIKBRUNO connected
+[EVENT]: MIKBRUNO disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: MIK connected
+[EVENT]: MIK disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: muk connected
+[EVENT]: muk disconnected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mik connected
+[EVENT]: muk connected
+[EVENT]: mik disconnected
+[EVENT]: muk disconnected
