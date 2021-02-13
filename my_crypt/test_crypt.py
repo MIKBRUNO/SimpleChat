@@ -2,7 +2,7 @@
 from Crypto.Cipher import AES
 from secrets import token_bytes
 import rsa
-import DataProcessing as dp
+from MessageHandlers import data_processing as dp
 
 message = 'super secret Alice\'s message'
 name = 'Alice'

@@ -3,6 +3,15 @@ from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
 
+"""
+.ui converted to python
+to convert:
+PySide2-uic GUI.ui 
+or
+PySide2-uic GUI.ui >> PyGUI.ui 
+"""
+
+
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():

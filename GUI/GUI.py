@@ -1,18 +1,22 @@
 from PySide2.QtWidgets import (QMainWindow, QDialog)
-from PySide2.QtCore import (Slot, Signal, QObject, Qt)
-from Client_GUI import (Ui_MainWindow, Ui_Dialog, Ui_Register)
+from PySide2.QtCore import (Signal)
+from GUI.GUI_from_ui import (Ui_MainWindow, Ui_Dialog, Ui_Register)
 
 
 class MainWindow(QMainWindow):
-    show_signal = Signal()
-    main_closed = Signal()
+    show_signal = Signal()  # signal using to show window
+    main_closed = Signal()  # signal using to run something if window closing
 
     def __init__(self):
+        """
+        connecting .ui converted to python to real widgets
+        """
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
     def closeEvent(self, event):
+        # calls event on close window needed to close whole program
         self.main_closed.emit()
         event.accept()
 
