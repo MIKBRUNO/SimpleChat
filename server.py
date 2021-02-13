@@ -3,6 +3,7 @@ from threading import Thread
 from Testing.Loggers import *
 from DataProcessing import *
 import bcrypt as b
+import sender as send
 
 DATA_SIZE = 1024
 
@@ -13,11 +14,11 @@ def write_users(users):
 
 
 def handler(msg_dict, rt):
-    if 'text' in msg_dict:
+    if msg_dict['id'] == 'msg':
         for conn in rt.parent.conns:
             if conn != rt and conn.registered:
                 conn.connection.send(write_json(msg_dict).encode())
-    elif 'sign' in msg_dict:
+    elif msg_dict['id'] == 'auth_cl':
         authenticate(msg_dict, rt)
 
 
@@ -26,7 +27,8 @@ def authenticate(msg_dict, rt):
     conn = rt.connection
     if msg_dict['sign']:
         if msg_dict['name'] in [name for name in ct.users]:
-            conn.send(write_json({'auth_return': False}).encode())
+            # conn.send(write_json({'auth_return': False}).encode())
+            send.send_auth_response_sr(conn, False)
         else:
             salt = b.gensalt()
             ciphered = b.hashpw(msg_dict['pass'].encode(), salt)
@@ -35,16 +37,19 @@ def authenticate(msg_dict, rt):
             rt.registered = True
             rt.name = msg_dict['name']
             write_to_main_log('EVENT', msg_dict['name'] + ' connected')
-            conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
+            # conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
+            send.send_auth_response_sr(conn, True, msg_dict['name'])
     else:
         if not ct.users or \
                 msg_dict['name'] not in ct.users or \
                 not b.checkpw(msg_dict['pass'].encode(), ct.users[msg_dict['name']].encode()):
-            conn.send(write_json({'auth_return': False}).encode())
+            # conn.send(write_json({'auth_return': False}).encode())
+            send.send_auth_response_sr(conn, False)
         else:
             rt.name = msg_dict['name']
             rt.registered = True
-            conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
+            # conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
+            send.send_auth_response_sr(conn, True, msg_dict['name'])
             write_to_main_log('EVENT', msg_dict['name'] + ' connected')
 
 

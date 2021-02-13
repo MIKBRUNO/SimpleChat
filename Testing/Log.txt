@@ -139,3 +139,15 @@
 [EVENT]: muk connected
 [EVENT]: mik disconnected
 [EVENT]: muk disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: mak connected
+[EVENT]: mak disconnected
+[EVENT]: not registered disconnected
+[EVENT]: MAAk connected
+[EVENT]: MAAk disconnected
+[EVENT]: Midbufyud connected
+[EVENT]: Midbufyud disconnected

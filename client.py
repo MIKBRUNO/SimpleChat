@@ -4,16 +4,18 @@ from threading import Thread
 from DataProcessing import *
 from GUI_thread import *
 from PySide2.QtWidgets import (QApplication, QTextEdit)
+import sender as send
+import crypt_sys as cs
 
 DATA_SIZE = 1024
 
 
 def handler(msg, rt):
     global reg, fail, main
-    if 'text' in msg:
+    if msg['id'] == 'msg':
         # print(msg['sender'] + ":", msg['text'])
         main.ui.listWidget.addItem(msg['sender'] + ": " + msg['text'])
-    elif 'auth_return' in msg:
+    elif msg['id'] == 'auth_sr':
         if not msg['auth_return']:
             reg.hide()
             fail.show_signal.emit()
@@ -55,26 +57,23 @@ def auth(ui, socket, read_thread):
         return
     password = ui.lineEdit_2.text()
     ui.lineEdit_2.clear()
-    socket.send(write_json(
-        {'name': ui.lineEdit.text(),
-         'pass': password,
-         'sign': ui.checkBox.isChecked()
-         }).encode())
-
-
-'''
-    needs to call some QT functions on this thread
-    https://stackoverflow.com/questions/19033818/how-to-call-a-function-on-a-running-python-thread
-'''
+    # socket.send(write_json(
+    #     {'name': ui.lineEdit.text(),
+    #      'pass': password,
+    #      'sign': ui.checkBox.isChecked()
+    #      }).encode())
+    send.send_auth_request_cl(socket, ui.lineEdit.text(),
+                              password, ui.checkBox.isChecked())
 
 
 def submit_msg(text_edit: QTextEdit):
     msg = text_edit.toPlainText()
     text_edit.clear()
-    sock.send(write_json({
-        'sender': read_thread.name,
-        'text': msg
-    }).encode())
+    # sock.send(write_json({
+    #     'sender': read_thread.name,
+    #     'text': msg
+    # }).encode())
+    send.send_chat_message_cl(sock, read_thread.name, msg)
     return read_thread.name + ': ' + msg
 
 
@@ -86,6 +85,7 @@ def quit_():
 
 if __name__ == '__main__':
     sock = s.socket()
+    public_key, private_key = cs.gen_rsa_keys()
     read_thread = ReadThread(sock)
     app = QApplication(sys.argv)
 
