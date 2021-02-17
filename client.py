@@ -62,16 +62,19 @@ def auth(ui, socket):
 
 
 def start_connection(ui, socket, read_thread):
-    try:
-        socket.connect((ui.lineEdit_3.text(), 9090))
-        read_thread.start()
-        mh.send_keys_handshake(socket, public_key)
-    except OSError:
-        global fail
-        reg.hide()
-        reg.ui.lineEdit_2.clear()
-        fail.show_signal.emit()
-        return
+    if not read_thread.is_alive():
+        try:
+            socket.connect((ui.lineEdit_3.text(), 9090))
+            read_thread.start()
+            mh.send_keys_handshake(socket, public_key)
+        except OSError:
+            global fail
+            reg.hide()
+            reg.ui.lineEdit_2.clear()
+            fail.show_signal.emit()
+            return
+    else:
+        auth(ui, socket)
 
 
 def submit_msg(text_edit: QTextEdit):

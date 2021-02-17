@@ -1,6 +1,6 @@
 import socket
 from threading import Thread
-from Testing.Loggers import *
+from LOGING.Loggers import *
 from MessageHandlers.data_processing import *
 import bcrypt as b
 from MessageHandlers import message_handlers as mh

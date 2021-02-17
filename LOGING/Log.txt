@@ -194,3 +194,28 @@
 [EVENT]: mik connected
 [EVENT]: Õ¿◊¿À‹Õ»  disconnected
 [EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[EVENT]: muk connected
+[EVENT]: muk disconnected
+[EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[EVENT]: mik disconnected

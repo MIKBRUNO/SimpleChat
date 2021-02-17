@@ -4,4 +4,4 @@ def write_to_log(tag, text, log):
 
 
 def write_to_main_log(tag, text):
-    write_to_log(tag, text, 'Testing/Log.txt')
+    write_to_log(tag, text, 'LOGING/Log.txt')
