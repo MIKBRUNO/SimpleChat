@@ -117,9 +117,5 @@ if __name__ == '__main__':
     main.ui.pushButton.clicked.connect(lambda: main.ui.listWidget.addItem(submit_msg(main.ui.plainTextEdit)))
     main.main_closed.connect(lambda: quit_())
 
-    item = QListWidgetItem()
-    main.ui.listWidget1.addItem(item)
-    main.ui.listWidget.mouse
-
     reg.show_signal.emit()
     sys.exit(app.exec_())
