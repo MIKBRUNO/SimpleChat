@@ -1,2 +1,6 @@
-for i in range(1025):
-    print('F', end='')
+from io import BytesIO
+
+msg = b'HelloWorld'
+io = BytesIO(msg)
+# io.write(msg)
+print(io.read())

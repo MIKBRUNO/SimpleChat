@@ -155,7 +155,7 @@ class Ui_MainWindow(object):
         self.actionSign_In.setText(QCoreApplication.translate("MainWindow", u"Sign In", None))
         self.pushButton.setText(QCoreApplication.translate("MainWindow", u"Submit", None))
         self.label.setText(QCoreApplication.translate("MainWindow", u"Select file", None))
-        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"\u041e\u0431\u0437\u043e\u0440", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Share", None))
+        self.pushButton_2.setText(QCoreApplication.translate("MainWindow", u"Chose", None))
+        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Update List", None))
         self.menuhello.setTitle(QCoreApplication.translate("MainWindow", u"Connect", None))
     # retranslateUi

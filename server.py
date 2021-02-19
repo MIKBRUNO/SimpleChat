@@ -4,8 +4,31 @@ from LOGING.Loggers import *
 from MessageHandlers.data_processing import *
 import bcrypt as b
 from MessageHandlers import message_handlers as mh
+from pyftpdlib.servers import FTPServer
+from pyftpdlib.authorizers import DummyAuthorizer
+from pyftpdlib.handlers import FTPHandler
+import os
+from Crypto.Cipher import AES
 
 DATA_SIZE = 1024
+
+
+class FTPHostThread(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+        self.__authorizer = DummyAuthorizer()
+        self.__homedir = os.path.join(os.getcwd(), 'ftp\\ftp_storage')
+        self.__handler = FTPHandler
+        self.__handler.authorizer = self.__authorizer
+        self.__server = FTPServer(('', 9091), self.__handler)
+
+    def run(self) -> None:
+        self.__server.serve_forever()
+
+    def add_user(self, name: str, password: str):
+        if not self.__server.handler.authorizer.has_user(name):
+            self.__server.handler.authorizer.add_user(name, password, self.__homedir, 'wrl')
+        # self.__authorizer.add_user(name, password, self.__homedir, 'wr')
 
 
 class ConnectorThread(Thread):
@@ -37,6 +60,7 @@ class ReadThread(Thread):
         self.name = 'not registered'
         self.registered = False
         self.client_key = None
+        self.ftp_key: AES = None
 
     def run(self):
         while True:
@@ -68,8 +92,8 @@ def handler(msg_dict, rt: ReadThread):
     if msg_dict['id'] == 'msg':
         for conn in rt.parent.conns:
             if conn != rt and conn.registered:
-                mh.send_chat_message_cl(conn.connection, msg_dict['sender'], msg_dict['text'], conn.client_key, private_key)
-                # conn.connection.send(write_json(msg_dict).encode())  # needs remake!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                mh.send_chat_message_cl(conn.connection, msg_dict['sender'], msg_dict['text'], conn.client_key,
+                                        private_key)
     elif msg_dict['id'] == 'auth_cl':
         authenticate(msg_dict, rt)
     elif msg_dict['id'] == 'handshake':
@@ -95,6 +119,8 @@ def authenticate(msg_dict, rt):
             write_to_main_log('EVENT', msg_dict['name'] + ' connected')
             # conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
             mh.send_auth_response_sr(conn, True, rt.client_key, private_key, msg_dict['name'])
+            write_to_main_log('EVENT', msg_dict['name'] + ' connected')
+            ftp_thread.add_user(msg_dict['name'], msg_dict['pass'])
     else:
         if not ct.users or \
                 msg_dict['name'] not in ct.users or \
@@ -107,6 +133,7 @@ def authenticate(msg_dict, rt):
             # conn.send(write_json({'auth_return': True, 'name': msg_dict['name']}).encode())
             mh.send_auth_response_sr(conn, True, rt.client_key, private_key, msg_dict['name'])
             write_to_main_log('EVENT', msg_dict['name'] + ' connected')
+            ftp_thread.add_user(msg_dict['name'], msg_dict['pass'])
 
 
 if __name__ == '__main__':
@@ -118,3 +145,6 @@ if __name__ == '__main__':
 
     connector = ConnectorThread(sock)
     connector.start()
+
+    ftp_thread = FTPHostThread()
+    ftp_thread.start()

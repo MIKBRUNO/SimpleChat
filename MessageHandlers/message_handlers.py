@@ -91,6 +91,7 @@ def send_keys_handshake(sock: socket.socket,
     """
     :param sock: socket to send to
     :param sending_key: this key will be send to client (server)
+    :param ftp_session_key: encrypted key to encrypt files
     """
     key = sending_key.save_pkcs1()
     msg = dp.write_json({'id': 'handshake', 'key': key.hex()})
