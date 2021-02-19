@@ -3,7 +3,7 @@ import socket as s
 from threading import Thread
 from MessageHandlers.data_processing import *
 from GUI.GUI import *
-from PySide2.QtWidgets import (QApplication, QTextEdit)
+from PySide2.QtWidgets import (QApplication, QTextEdit, QListWidgetItem)
 from MessageHandlers import message_handlers as mh
 
 DATA_SIZE = 1024
@@ -116,6 +116,10 @@ if __name__ == '__main__':
     main.show_signal.connect(lambda: main.show())
     main.ui.pushButton.clicked.connect(lambda: main.ui.listWidget.addItem(submit_msg(main.ui.plainTextEdit)))
     main.main_closed.connect(lambda: quit_())
+
+    item = QListWidgetItem()
+    main.ui.listWidget1.addItem(item)
+    main.ui.listWidget.mouse
 
     reg.show_signal.emit()
     sys.exit(app.exec_())

@@ -8,9 +8,9 @@ PASS = '3216547'
 
 auth = DummyAuthorizer()
 auth.add_anonymous(os.getcwd())
-auth.add_user(NAME, PASS, os.path.join(os.getcwd(), '..\\ftp_base'), auth.write_perms+auth.read_perms)
+auth.add_user(NAME, PASS, os.path.join(os.getcwd(), '..\\ftp_storage'), auth.write_perms+auth.read_perms)
 # auth.add_user(NAME, PASS, os.path.join(os.getcwd(), '..\\ftp_base'))
-print(os.path.join(os.getcwd(), '..\\ftp_base'))
+print(os.path.join(os.getcwd(), '..\\ftp_storage'))
 
 handler = FTPHandler
 handler.authorizer = auth
