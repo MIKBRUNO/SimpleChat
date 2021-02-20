@@ -7,6 +7,7 @@ from PySide2.QtWidgets import (QApplication, QTextEdit, QFileDialog)
 from MessageHandlers import message_handlers as mh
 from ftplib import FTP
 from io import BytesIO
+import os
 
 DATA_SIZE = 1024
 
@@ -106,13 +107,22 @@ def send_file():
     if path != '':
         name = path.split('/')[-1]
         with open(path, 'rb') as f:
-            encrypted_f_dict = mh.cipher(f.read(), server_key, private_key)
-            encrypted_f_dict['id'] = 'crypt'
-            encrypted_f_dict = write_json(encrypted_f_dict)
-            encrypted_f_dict = encrypted_f_dict.encode()
-            encrypted_f = BytesIO(encrypted_f_dict)
-            ftp.storbinary('STOR ' + name, encrypted_f)
+            # encrypted_f_dict = mh.cipher(f.read(), server_key, private_key)
+            # encrypted_f_dict['id'] = 'crypt'
+            # encrypted_f_dict = write_json(encrypted_f_dict)
+            # encrypted_f_dict = encrypted_f_dict.encode()
+            # encrypted_f = BytesIO(encrypted_f_dict)
+            # ftp.storbinary('STOR ' + name, encrypted_f)
+            ftp.storbinary('STOR ' + name, f)
         update_files_list()
+
+
+def request_file(filename: str) -> None:
+    path, _ = files.getSaveFileName(dir='~/Desktop/'+filename,
+                                    filter=filename.split('.')[-1])
+    with open(path, 'wb') as f:
+        ftp.retrbinary('RETR '+filename, f.write)
+    update_files_list()
 
 
 def update_files_list():
@@ -151,6 +161,8 @@ if __name__ == '__main__':
     files = QFileDialog()
     main.ui.pushButton_2.clicked.connect(lambda: send_file())
     main.ui.pushButton_3.clicked.connect(lambda: update_files_list())
+
+    main.ui.listWidget1.itemActivated.connect(lambda: request_file(main.ui.listWidget1.currentItem().text()))
 
     reg.show_signal.emit()
     sys.exit(app.exec_())

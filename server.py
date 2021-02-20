@@ -13,12 +13,20 @@ from Crypto.Cipher import AES
 DATA_SIZE = 1024
 
 
+class CryptoFTPHandler(FTPHandler):
+    def on_incomplete_file_sent(self, file):
+        write_to_main_log('FTPHandler_', str(file))
+
+    def on_incomplete_file_received(self, file):
+        write_to_main_log('FTPHandler_', str(file))
+
+
 class FTPHostThread(Thread):
     def __init__(self):
         Thread.__init__(self)
         self.__authorizer = DummyAuthorizer()
         self.__homedir = os.path.join(os.getcwd(), 'ftp\\ftp_storage')
-        self.__handler = FTPHandler
+        self.__handler = CryptoFTPHandler
         self.__handler.authorizer = self.__authorizer
         self.__server = FTPServer(('', 9091), self.__handler)
 

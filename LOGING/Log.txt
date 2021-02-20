@@ -1,289 +1,30 @@
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: MIKBRUNO connected
-[EVENT]: MIKBRUNO disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: MIKBRUNO connected
-[EVENT]: MIKBRUNO disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: MIKBRUNO connected
-[EVENT]: MIKBRUNO disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: MIKBRUNO connected
-[EVENT]: MIKBRUNO disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: MIK connected
-[EVENT]: MIK disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: muk connected
-[EVENT]: muk disconnected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mik connected
-[EVENT]: muk connected
-[EVENT]: mik disconnected
-[EVENT]: muk disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: not registered disconnected
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[EVENT]: mak connected
-[EVENT]: mak disconnected
-[EVENT]: not registered disconnected
-[EVENT]: MAAk connected
-[EVENT]: MAAk disconnected
-[EVENT]: Midbufyud connected
-[EVENT]: Midbufyud disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
+[FTP_IOLoop_r]: <pyftpdlib.servers.FTPServer listening ('::', 9091, 0, 0) at 0x333fbc8>
 [Crypto]: handshake done
 [EVENT]: mik connected
-[Crypto]: handshake done
-[Crypto]: handshake done
-[Crypto]: handshake done
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: muk connected
-[EVENT]: mik disconnected
-[EVENT]: muk disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: muk connected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: muk connected
-[EVENT]: muk disconnected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: muk connected
-[Crypto]: handshake done
-[EVENT]: Õ¿◊¿À‹Õ»  connected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: Õ¿◊¿À‹Õ»  disconnected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: muk connected
-[EVENT]: muk disconnected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <pyftpdlib.handlers.PassiveDTP listening ::1:0 at 0x3c7a808>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_w]: <DTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <pyftpdlib.handlers.PassiveDTP listening ::1:0 at 0x3c85fa0>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_w]: <DTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <pyftpdlib.handlers.PassiveDTP listening ::1:0 at 0x3c7a808>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <DTPHandler(id=53737768, addr='::1:50147', user='mik', sending-file=<_io.BufferedWriter name='C:\\Users\\Admin\\Desktop\\SimpleChat\\ftp\\ftp_storage\\users.json'>, bytes-trans=0)>
+[FTP_IOLoop_r]: <DTPHandler(id=53737768, addr='::1:50147', user='mik', sending-file=<_io.BufferedWriter name='C:\\Users\\Admin\\Desktop\\SimpleChat\\ftp\\ftp_storage\\users.json'>, bytes-trans=982)>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <pyftpdlib.handlers.PassiveDTP listening ::1:0 at 0x3c7a790>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_w]: <DTPHandler(id=53737768, addr='::1:50147', user='mik')>
+[FTP_IOLoop_r]: <FTPHandler(id=53737768, addr='::1:50147', user='mik')>
 [Crypto]: handshake done
 [EVENT]: mik connected
 [EVENT]: mik disconnected
@@ -324,68 +65,7 @@
 [EVENT]: mik connected
 [EVENT]: mik disconnected
 [EVENT]: not registered disconnected
-[Crypto]: handshake done
 [EVENT]: not registered disconnected
-[Crypto]: handshake done
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: not registered disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
-[Crypto]: handshake done
-[EVENT]: mik connected
-[EVENT]: mik disconnected
 [Crypto]: handshake done
 [EVENT]: mik connected
 [EVENT]: mik disconnected
