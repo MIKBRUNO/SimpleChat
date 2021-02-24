@@ -19,8 +19,9 @@ class FTPHostThread(Thread):
         self.__authorizer = DummyAuthorizer()
         self.__homedir = os.path.join(os.getcwd(), 'ftp\\ftp_storage')
         self.__handler = TLS_FTPHandler
-        self.__handler.certfile = '.keys/cert.pem'
-        self.__handler.keyfile = '.keys/key.pem'
+        self.__handler.certfile = './.keys/cert.pem'
+        self.__handler.keyfile = './.keys/key.pem'
+        # self.__handler.ssl_protocol =
         # self.__handler = FTPHandler
         self.__handler.authorizer = self.__authorizer
         self.__server = FTPServer(('', 9091), self.__handler)
@@ -126,7 +127,8 @@ def authenticate(msg_dict, rt):
     else:
         if not ct.users or \
                 msg_dict['name'] not in ct.users or \
-                not b.checkpw(msg_dict['pass'].encode(), ct.users[msg_dict['name']].encode()):
+                not b.checkpw(msg_dict['pass'].encode(), ct.users[msg_dict['name']].encode()) or\
+                msg_dict['name'] in [i.name for i in ct.conns]:
             # conn.send(write_json({'auth_return': False}).encode())
             mh.send_auth_response_sr(conn, False, rt.client_key, private_key, '')
         else:
