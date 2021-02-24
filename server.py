@@ -6,19 +6,11 @@ import bcrypt as b
 from MessageHandlers import message_handlers as mh
 from pyftpdlib.servers import FTPServer
 from pyftpdlib.authorizers import DummyAuthorizer
-from pyftpdlib.handlers import FTPHandler
+from pyftpdlib.handlers import FTPHandler, TLS_FTPHandler
 import os
 from Crypto.Cipher import AES
 
 DATA_SIZE = 1024
-
-
-class CryptoFTPHandler(FTPHandler):
-    def on_incomplete_file_sent(self, file):
-        write_to_main_log('FTPHandler_', str(file))
-
-    def on_incomplete_file_received(self, file):
-        write_to_main_log('FTPHandler_', str(file))
 
 
 class FTPHostThread(Thread):
@@ -26,7 +18,10 @@ class FTPHostThread(Thread):
         Thread.__init__(self)
         self.__authorizer = DummyAuthorizer()
         self.__homedir = os.path.join(os.getcwd(), 'ftp\\ftp_storage')
-        self.__handler = CryptoFTPHandler
+        self.__handler = TLS_FTPHandler
+        self.__handler.certfile = '.keys/cert.pem'
+        self.__handler.keyfile = '.keys/key.pem'
+        # self.__handler = FTPHandler
         self.__handler.authorizer = self.__authorizer
         self.__server = FTPServer(('', 9091), self.__handler)
 
@@ -36,7 +31,6 @@ class FTPHostThread(Thread):
     def add_user(self, name: str, password: str):
         if not self.__server.handler.authorizer.has_user(name):
             self.__server.handler.authorizer.add_user(name, password, self.__homedir, 'wrl')
-        # self.__authorizer.add_user(name, password, self.__homedir, 'wr')
 
 
 class ConnectorThread(Thread):

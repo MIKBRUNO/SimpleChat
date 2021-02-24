@@ -90,3 +90,10 @@
 [Crypto]: handshake done
 [EVENT]: mik connected
 [EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected

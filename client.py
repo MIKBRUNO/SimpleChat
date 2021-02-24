@@ -5,11 +5,17 @@ from MessageHandlers.data_processing import *
 from GUI.GUI import *
 from PySide2.QtWidgets import (QApplication, QTextEdit, QFileDialog)
 from MessageHandlers import message_handlers as mh
-from ftplib import FTP
+from ftplib import FTP, FTP_TLS
 from io import BytesIO
-import os
+from Crypto.Cipher import AES
 
 DATA_SIZE = 1024
+
+
+def get_aes_keys():
+    with open('.keys/ftp_aes.key', 'rb') as f:
+        a = f.readlines()
+        return a[0], a[1]
 
 
 def handler(msg, rt):
@@ -107,13 +113,14 @@ def send_file():
     if path != '':
         name = path.split('/')[-1]
         with open(path, 'rb') as f:
-            # encrypted_f_dict = mh.cipher(f.read(), server_key, private_key)
-            # encrypted_f_dict['id'] = 'crypt'
-            # encrypted_f_dict = write_json(encrypted_f_dict)
-            # encrypted_f_dict = encrypted_f_dict.encode()
-            # encrypted_f = BytesIO(encrypted_f_dict)
-            # ftp.storbinary('STOR ' + name, encrypted_f)
-            ftp.storbinary('STOR ' + name, f)
+            a, b = get_aes_keys()
+            cipher = AES.new(a, AES.MODE_EAX,
+                             nonce=b)
+            r = f.read()
+            encrypted = cipher.encrypt(r)
+            encrypted_f = BytesIO(encrypted)
+            ftp.storbinary('STOR ' + name, encrypted_f)
+            # ftp.storbinary('STOR ' + name, f)
         update_files_list()
 
 
@@ -121,7 +128,13 @@ def request_file(filename: str) -> None:
     path, _ = files.getSaveFileName(dir='~/Desktop/'+filename,
                                     filter=filename.split('.')[-1])
     with open(path, 'wb') as f:
-        ftp.retrbinary('RETR '+filename, f.write)
+        def aes_write(b: bytes) -> None:
+            a, b = get_aes_keys()
+            cipher = AES.new(a, AES.MODE_EAX,
+                             nonce=b)
+            d = cipher.decrypt(b)
+            f.write(d)
+        ftp.retrbinary('RETR '+filename, aes_write)
     update_files_list()
 
 
@@ -136,7 +149,8 @@ def update_files_list():
 if __name__ == '__main__':
     password = ''
     sock = s.socket()
-    ftp = FTP()
+    # ftp = FTP()
+    ftp = FTP_TLS()
     read_thread = ReadThread(sock)
     app = QApplication(sys.argv)
 
