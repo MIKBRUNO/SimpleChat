@@ -125,18 +125,27 @@ def send_auth_request_cl(sock: socket.socket,
                          name: str,
                          password: str,
                          is_signing: bool,
+                         server_password: str,
                          other_key: rsa.PublicKey,
                          my_key: rsa.PrivateKey) -> None:
     """
-    standard is {'id': 'auth_cl', 'name': name, 'pass': password, 'sign': is_signing}
+    standard is {'id': 'auth_cl',
+                 'name': name, 'pass': password,
+                 'sign': is_signing, 'srpass': server_password,
+                 'email': mail_addr}
     :param sock: socket that hosts SimpleChat server
     :param name: authentication name
     :param password: password to authenticate
     :param is_signing: does user sign in SimpleChat or log in
+    :param server_password: server password for more security
     :param other_key: other's public key
     :param my_key: your side's private key
     """
-    msg = dp.write_json({'id': 'auth_cl', 'name': name, 'pass': password, 'sign': is_signing})
+    msg = dp.write_json({'id': 'auth_cl',
+                         'name': name,
+                         'pass': password,
+                         'sign': is_signing,
+                         'srpass': server_password})
     msg = msg.encode()
     __send(sock, msg, other_key, my_key)
 

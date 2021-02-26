@@ -17,7 +17,10 @@ it might be necessary to use special handlers to remove layers
 
 #### **Message standards**
 * `{'id': 'msg', 'sender': name, 'text': name}`
-* `{'id': 'auth_cl', 'name': name, 'pass': password, 'sign': is_signing}`
+* `{'id': 'auth_cl',
+                    'name': name, 'pass': password,
+                    'sign': is_signing, 'srpass': server_password,
+                    'email': mail_addr}`
 * `{'id': 'auth_sr', 'auth_return': auth_return, 'name': returning_name}`
 * `{'id': 'crypto', text': text, 'session_key': ssk, 'nonce': nonce, 'signature': sign}`
 * `{'id': 'handshake', 'key': key}`

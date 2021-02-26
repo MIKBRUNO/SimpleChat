@@ -9,6 +9,7 @@ from pyftpdlib.authorizers import DummyAuthorizer
 from pyftpdlib.handlers import FTPHandler, TLS_FTPHandler
 import os
 from Crypto.Cipher import AES
+from secrets import token_hex
 
 DATA_SIZE = 1024
 
@@ -109,7 +110,9 @@ def authenticate(msg_dict, rt):
     ct = rt.parent
     conn = rt.connection
     if msg_dict['sign']:
-        if msg_dict['name'] in [name for name in ct.users]:
+        if msg_dict['srpass'] != host_password:
+            mh.send_auth_response_sr(conn, False, rt.client_key, private_key, '')
+        elif msg_dict['name'] in [name for name in ct.users]:
             # conn.send(write_json({'auth_return': False}).encode())
             mh.send_auth_response_sr(conn, False, rt.client_key, private_key, '')
         else:
@@ -125,7 +128,9 @@ def authenticate(msg_dict, rt):
             write_to_main_log('EVENT', msg_dict['name'] + ' connected')
             ftp_thread.add_user(msg_dict['name'], msg_dict['pass'])
     else:
-        if not ct.users or \
+        if msg_dict['srpass'] != host_password:
+            mh.send_auth_response_sr(conn, False, rt.client_key, private_key, '')
+        elif not ct.users or \
                 msg_dict['name'] not in ct.users or \
                 not b.checkpw(msg_dict['pass'].encode(), ct.users[msg_dict['name']].encode()) or\
                 msg_dict['name'] in [i.name for i in ct.conns]:
@@ -146,6 +151,9 @@ if __name__ == '__main__':
     sock.listen()
 
     public_key, private_key = mh.gen_keys()
+
+    host_password = token_hex(3)
+    print(host_password)
 
     connector = ConnectorThread(sock)
     connector.start()
