@@ -22,7 +22,7 @@ def prehandler(msg: dict,
                private_key: rsa.PrivateKey,
                another_key: rsa.PublicKey) -> dict:
     if msg['id'] != 'crypt':
-        return msg
+        raise ValueError('does not encrypted!!!')
     nonce = rsa.decrypt(bytes.fromhex(msg['nonce']), private_key)
     ssk = rsa.decrypt(bytes.fromhex(msg['session_key']), private_key)
     aes_cipher = AES.new(ssk, AES.MODE_EAX, nonce=nonce)

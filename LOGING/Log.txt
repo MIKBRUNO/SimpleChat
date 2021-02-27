@@ -171,3 +171,130 @@
 [EVENT]: mik connected
 [EVENT]: mik connected
 [EVENT]: mik disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[EVENT]: muk connected
+[EVENT]: muk connected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[EVENT]: muk connected
+[Crypto]: handshake done
+[EVENT]: muk disconnected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[Crypto]: handshake done
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[Crypto]: handshake done
+[Crypto]: handshake done
+[Crypto]: handshake done
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[EVENT]: mik disconnected
+[EVENT]: not registered disconnected
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[EVENT]: mik disconnected
+[Connector]: [<ReadThread(not registered, started 10024)>]
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, started 7596)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, started 7272)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, started 5128)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, started 4228)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, started 9912)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, stopped 9912)>, <ReadThread(not registered, started 6924)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, stopped 9912)>]
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, stopped 9912)>, <ReadThread(not registered, started 736)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10024)>, <ReadThread(not registered, stopped 9912)>]
+[Connector]: [<ReadThread(not registered, started 8156)>]
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(not registered, started 6104)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(not registered, started 4948)>]
+[Crypto]: handshake done
+[EVENT]: muk connected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, started 1304)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, started 3368)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, started 11196)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, started 2712)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, started 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 8224)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 10588)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 2864)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 3524)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 5980)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 7724)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 9476)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>, <ReadThread(not registered, started 2448)>]
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(muk, started 4948)>, <ReadThread(not registered, stopped 908)>]
+[EVENT]: muk disconnected
+[Connector]: [<ReadThread(mik, started 8156)>, <ReadThread(not registered, stopped 908)>]
+[EVENT]: mik disconnected
+[Connector]: [<ReadThread(not registered, stopped 908)>]
+[Connector]: [<ReadThread(not registered, started 10564)>]
+[Crypto]: handshake done
+[EVENT]: mik connected
+[Connector]: [<ReadThread(mik, started 10564)>, <ReadThread(not registered, started 9752)>]
+[Crypto]: handshake done
+[EVENT]: not registered disconnected
+[Connector]: [<ReadThread(mik, started 10564)>]
+[Connector]: [<ReadThread(mik, started 10564)>, <ReadThread(not registered, started 6132)>]

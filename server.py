@@ -22,6 +22,7 @@ class FTPHostThread(Thread):
         self.__handler = TLS_FTPHandler
         self.__handler.certfile = './.keys/cert.pem'
         self.__handler.keyfile = './.keys/key.pem'
+        self.__handler.timeout = 0
         # self.__handler.ssl_protocol =
         # self.__handler = FTPHandler
         self.__handler.authorizer = self.__authorizer
@@ -47,6 +48,7 @@ class ConnectorThread(Thread):
         self.conns.remove(connection)
         write_to_main_log('EVENT', name + ' disconnected')
         connection.connection.close()
+        write_to_main_log('Connector', self.conns.__str__())
 
     def run(self):
         while True:
@@ -54,6 +56,7 @@ class ConnectorThread(Thread):
             rt = ReadThread(conn, self)
             rt.start()
             self.conns.append(rt)
+            write_to_main_log('Connector', self.conns.__str__())
 
 
 class ReadThread(Thread):
@@ -92,18 +95,22 @@ def write_users(users):
 
 
 def handler(msg_dict, rt: ReadThread):
-    msg_dict = mh.prehandler(msg_dict, private_key, rt.client_key)
-    if msg_dict['id'] == 'msg':
-        for conn in rt.parent.conns:
-            if conn != rt and conn.registered:
-                mh.send_chat_message_cl(conn.connection, msg_dict['sender'], msg_dict['text'], conn.client_key,
-                                        private_key)
-    elif msg_dict['id'] == 'auth_cl':
-        authenticate(msg_dict, rt)
-    elif msg_dict['id'] == 'handshake':
+    if msg_dict['id'] == 'handshake':
         rt.client_key = mh.make_key(msg_dict['key'])
         mh.send_keys_handshake(rt.connection, public_key)
         write_to_main_log('Crypto', 'handshake done')
+    else:
+        try:
+            msg_dict = mh.prehandler(msg_dict, private_key, rt.client_key)
+        except ValueError:
+            return
+        if msg_dict['id'] == 'msg':
+            for conn in rt.parent.conns:
+                if conn != rt and conn.registered:
+                    mh.send_chat_message_cl(conn.connection, msg_dict['sender'], msg_dict['text'], conn.client_key,
+                                            private_key)
+        elif msg_dict['id'] == 'auth_cl':
+            authenticate(msg_dict, rt)
 
 
 def authenticate(msg_dict, rt):

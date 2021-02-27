@@ -12,32 +12,31 @@ from Crypto.Cipher import AES
 DATA_SIZE = 1024
 
 
-def get_aes_keys():
-    with open('.keys/ftp_aes.key', 'rb') as f:
-        a = f.readlines()
-        return a[0], a[1]
-
-
 def handler(msg, rt):
     global reg, fail, main, server_key, password
-    msg = mh.prehandler(msg, private_key, server_key)
-    if msg['id'] == 'msg':
-        # print(msg['sender'] + ":", msg['text'])
-        main.ui.listWidget.addItem(msg['sender'] + ": " + msg['text'])
-    elif msg['id'] == 'auth_sr':
-        if not msg['auth_return']:
-            reg.hide()
-            fail.show_signal.emit()
-        else:
-            rt.name = msg['name']
-            ftp.login(msg['name'], password)
-            password = ''
-            reg.hide()
-            main.show_signal.emit()
-            update_files_list()
-    elif msg['id'] == 'handshake':
+    if msg['id'] == 'handshake':
         server_key = mh.make_key(msg['key'])
         auth(reg.ui, sock)
+    else:
+        try:
+            msg = mh.prehandler(msg, private_key, server_key)
+        except ValueError:
+            main.ui.listWidget.addItem('SimpleChatSYS: someone tried to send you not encrypted msg')
+            return
+        if msg['id'] == 'msg':
+            # print(msg['sender'] + ":", msg['text'])
+            main.ui.listWidget.addItem(msg['sender'] + ": " + msg['text'])
+        elif msg['id'] == 'auth_sr':
+            if not msg['auth_return']:
+                reg.hide()
+                fail.show_signal.emit()
+            else:
+                rt.name = msg['name']
+                ftp.login(msg['name'], password)
+                password = ''
+                reg.hide()
+                main.show_signal.emit()
+                update_files_list()
 
 
 class ReadThread(Thread):
@@ -71,6 +70,7 @@ def auth(ui, socket):
     #      }).encode())
     mh.send_auth_request_cl(socket, ui.lineEdit.text(),
                             password, ui.checkBox.isChecked(),
+                            ui.lineEdit_4.text(),
                             server_key, private_key)
 
 
@@ -113,9 +113,8 @@ def send_file():
     if path != '':
         name = path.split('/')[-1]
         with open(path, 'rb') as f:
-            a, b = get_aes_keys()
-            cipher = AES.new(a, AES.MODE_EAX,
-                             nonce=b)
+            cipher = AES.new(b'\xd6\xf8\xdf\x12\xca\xf8\xea\xe9\x9d\x01\x9eh\xfe\xf0\xbc\x8e', AES.MODE_EAX,
+                             nonce=b"O\x06\xdd'\x8f\xaa\xf6\x92\xf1\x00\x06\x03y\xd6\xde\x9f")
             r = f.read()
             encrypted = cipher.encrypt(r)
             encrypted_f = BytesIO(encrypted)
@@ -128,13 +127,17 @@ def request_file(filename: str) -> None:
     path, _ = files.getSaveFileName(dir='~/Desktop/'+filename,
                                     filter=filename.split('.')[-1])
     with open(path, 'wb') as f:
+        ftp.retrbinary('RETR '+filename, f.write)
+    r = b''
+    with open(path, 'rb') as f:
+        r = f.read()
+    with open(path, 'wb') as f:
         def aes_write(b: bytes) -> None:
-            a, b = get_aes_keys()
-            cipher = AES.new(a, AES.MODE_EAX,
-                             nonce=b)
+            cipher = AES.new(b'\xd6\xf8\xdf\x12\xca\xf8\xea\xe9\x9d\x01\x9eh\xfe\xf0\xbc\x8e', AES.MODE_EAX,
+                             nonce=b"O\x06\xdd'\x8f\xaa\xf6\x92\xf1\x00\x06\x03y\xd6\xde\x9f")
             d = cipher.decrypt(b)
             f.write(d)
-        ftp.retrbinary('RETR '+filename, aes_write)
+        aes_write(r)
     update_files_list()
 
 
